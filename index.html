@@ -4,102 +4,22 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no,minimal-ui">
 		<meta name="format-detection" content="telephone=no">
+		<link rel="shortcut icon" type="image/x-icon" href="./data/favicon.ico">
 		<link rel="stylesheet" href="css/reset.css">
-		<style type="text/css">
-			html {
-				width: 100%;
-				height: 100%;
-				overflow-x:hidden;
-				font-size:62.5%;
-			}
-			body {
-				text-align: left;
-				width: 100%;
-				overflow: hidden;
-				background: #e9dfc7;
-			}
-			.m-read-content {
-				font-size: 1.4rem;
-				color: #555;
-				line-height: 31px;
-				padding: 15px;
-			}
-			.m-read-content h4 {
-				font-size: 2rem;
-				color: #736357;
-				border-bottom:solid 1px #736357;
-				letter-spacing: 2px;
-				margin:0 0 1em 0;
-			}
-			.m-read-content p {
-				text-indent: 2em;
-				margin:0.5em 0;
-				letter-spacing: 0;
-				line-height: 2.4rem;
-			}
-			.m-button-bar {
-				width: 60%;
-				max-width: 800px;
-				margin: 0 auto;
-				padding: 5px;
-			}
-			.u-tab {
-				height: 34px;
-				margin: 10px auto;
-				line-height: 34px;
-				border-radius: 8px;
-				border:1px solid #858382;
-				font-size: 1.2rem;
-				background: #000;
-				opacity: 0.9;
-			}
-			.u-tab li {
-				display: inline-block;
-				width: 49%;
-				text-align: center;
-				border-right:1px solid #858382;
-				color:#fff;
-			}
-			.u-tab li:last-child {
-				border-right:none;
-			} 
-			.top-nav {
-				position: fixed;
-				top: 0px;
-				width: 100%;
-				height: 50px;
-				z-index: 99;
-				background: #000;
-			}
-			.icon-back {
-				position: absolute;
-				top: 14px;
-				left: 10px;
-				width: 23px;
-				height: 23px;
-				background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFAAAABQCAYAAACOEfKtAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyNpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNS1jMDE0IDc5LjE1MTQ4MSwgMjAxMy8wMy8xMy0xMjowOToxNSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIChNYWNpbnRvc2gpIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOkJGMkEyQkQxMjdBNDExRTU4NjA2QTJDMjFDQ0I0ODhEIiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOkJGMkEyQkQyMjdBNDExRTU4NjA2QTJDMjFDQ0I0ODhEIj4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6QkYyQTJCQ0YyN0E0MTFFNTg2MDZBMkMyMUNDQjQ4OEQiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6QkYyQTJCRDAyN0E0MTFFNTg2MDZBMkMyMUNDQjQ4OEQiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz4Ia560AAAHWklEQVR42uyd7W9U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);
-				background-size: contain;
-			}
-			.nav-title {
-				position:absolute;
-				top: 16px;
-				left: 42px;
-				color: #d5d5d6;
-			}
-			.footer-nav {
-				
-			}
-		</style>
+		<link rel="stylesheet" href="css/style.css"/>
 	</head>
 	<body>
 		<div id="root" class="container">
-			<div id="top-nav" class="top-nav">
+			<div class="artical-action">
+				<div class="artical-action-mid" id="action_mid"></div>
+			</div>
+			<div id="top-nav" class="top-nav" style="display: none;">
 				<div class="icon-back"></div>
 				<div class="nav-title">返回书架</div>
 			</div>
 			<div id="fiction_chapter_title"></div>
 			<div id="fiction_container" class="m-read-content">
-				<h4>写轮眼</h4>
+				<!--<h4>写轮眼</h4>
 				<p>
 					“嗯？头怎么昏昏的？我这是在哪里？”郑玉恒醒来之后，晃了晃头，想要驱散那昏沉沉的感觉，不过事与愿违，不晃不要紧，一晃之下再次倒下了。
 					再次昏迷过去之后，他好像做了一个梦，在梦中他的名字叫做宇智波佐助，出生在宇智波家族，父亲是宇智波一族的族长，母亲负责家务，还有一
@@ -151,7 +71,7 @@
 					名天才的哥哥，自己总是缠着哥哥一起修炼，希望他教导自己苦无的投掷方法。幸福的生活终结了，哥哥突然不知道为什么？独自一人杀死了全部
 					的族人，最后在面对自己的时候，眼中充满了不屑，随后使用了幻术攻击，好像哥哥最后嘴里吐出了两个字：“月读。”这是火影吗？我怎么会梦到
 					火影忍者里的情节？我不是应该死去了吗？
-				</p>
+				</p>-->
 			</div>
 			<div class="m-button-bar">
 				<ul class="u-tab">
@@ -159,7 +79,8 @@
 					<li id="next_button">下一章</li>
 				</ul>
 			</div>
-			<div id="nav-pannel" class="font-container">
+			<div class="nav-pannel-bk font-container" style="display: none;"></div>
+			<div class="nav-pannel font-container" id="font-container" style="display: none;">
 				<div class="child-mod">
 					<span>字号</span>
 					<button id="large-font" class="font-size-button">大</button>
@@ -167,11 +88,29 @@
 				</div>
 				<div class="child-mod">
 					<span>背景</span>
-					<div class="bk-container">
-						<div class="bk-container-current">
-							
-						</div>
+					<div class="bk-container bk_fff bk_container">
+						<div class="bk-container-current"></div>
 					</div>
+					<div class="bk-container bk_E9DFC7 bk_container">
+						<div class="bk-container-current"></div>
+					</div>
+					<div class="bk-container bk_D5D5D6 bk_container">
+						<div class="bk-container-current"></div>
+					</div>
+				</div>
+			</div>
+			<div id="footer-nav" class="footer-nav" style="display: none;">
+				<div id="catalog" class="catalog">
+					<div class="icon-catalog"></div>
+					<div class="tips">目录</div>
+				</div>
+				<div id="typeface" class="typeface">
+					<div id="icon-typeface" class="icon-typeface"></div>
+					<div class="tips">字体</div>
+				</div>
+				<div id="night" class="night">
+					<div id="icon-date-night" class="icon-night"></div>
+					<div class="tips">夜间</div>
 				</div>
 			</div>
 		</div>
@@ -183,7 +122,262 @@
 		<script src="js/jquery.jsonp.js"></script>
 
 		<script>
-			
+			(function() {
+				'use strict';
+				var Util = (function(){
+					var prefix = 'html5_reader_';
+					var StorageGetter = function(key) {
+						return localStorage.getItem((prefix + key));
+					}
+					var StorageSetter = function(key,val){
+						return localStorage.setItem(prefix + key,val);
+					}
+					var getBSJSONP = function(url,callback){
+						return $.jsonp({//jsonp插件的方法
+							url : url,
+							cache : true,//是否可以缓存
+							callback:'duokan_fiction_chapter',//把数据已js的方式请求回来，外层包裹一个方法callback指向那个方法
+							success: function(result){
+//								debugger
+								var data = $.base64.decode(result);
+								var json = decodeURIComponent(escape(data));
+								callback(json);
+							}
+						})
+					}
+					return {
+						getBSJSONP:getBSJSONP,
+						StorageGetter:StorageGetter,
+						StorageSetter:StorageSetter
+					}
+				})();
+				var Dom = {
+					top_nav: $("#top-nav"),
+					footer_nav: $("#footer-nav"),
+					night_day_switch_button: $('#night'),
+					font_container: $('.font-container'),
+					font_button: $('#icon-typeface')
+				}
+				var Win = $(window);
+				var Doc = $(document);
+				var readerModel;
+				var readerUI;
+				var RootContainer = $('#fiction_container')
+				var initFontSize = Util.StorageGetter("font-size");
+				initFontSize = parseInt(initFontSize);
+				if(!initFontSize){
+					initFontSize = 14;
+				}
+				var initBackground = Util.StorageGetter("background");
+				if(!initBackground){
+					initBackground = "#E9DFC7";
+				}
+				RootContainer.css('background',initBackground);
+//				var initFontSize ;
+//				!initFontSize ? initFontSize=14:initFontSize=parseInt(Util.StorageGetter('font-size'));
+				RootContainer.css('font-size',initFontSize);
+				function main(){
+					//todo 整个项目的入口函数
+					readerModel = ReaderModel();
+					readerUI = ReaderBaseFrame(RootContainer);
+					readerModel.init(function(data){
+						readerUI(data)
+					});
+					EventHanlder();
+				}
+				function ReaderModel() {
+					//todo 实现和阅读器相关的数据交互方法
+					var Chapter_id;
+					var Chapter_len;
+					var init = function(UIcallback){
+						/*改用Promise方法*/
+//						getFictionInfo(function(data){
+//							getCurChapterContent(Chapter_id,function(data){
+//								UIcallback && UIcallback(data);
+//							})
+//						})
+						/*一个promise对象执行完以后用then方法执行另一个promise对象直到最后执行的不再是一个promise对象以后停止
+						 */
+						getFictionInfoPromiser().then(function(d){
+							return getCurChapterContentPromise();
+						}).then(function(data){
+							UIcallback && UIcallback(data);
+						});
+					}
+					/*Promise实现异步*/
+//					Promise对象不是立刻创建，应该是在调用的时候创建var getFictionInfoPromiser = new Promise(function(resolve,reject){
+					var getFictionInfoPromiser = function(){
+						return new Promise(function(resolve,reject){
+							$.get('./data/chapter.json',function(data) {
+									//todo 获得章节信息的回调
+									if(data.result == 0){
+										Chapter_id = Util.StorageGetter('last_chapter_id');
+										if(Chapter_id === null){
+											Chapter_id = data.chapters[1].chapter_id;
+										}
+										Chapter_len = data.chapters.length;
+										resolve();
+									} else {
+										reject();
+									}
+								},'json');
+							});
+						}	
+					/*回调实现异步*/
+					var getFictionInfo = function(callback) {
+						$.get('./data/chapter.json',function(data) {
+							//todo 获得章节信息的回调
+							Chapter_id = Util.StorageGetter('last_chapter_id');
+							if(Chapter_id === null){
+								Chapter_id = data.chapters[1].chapter_id;
+							}
+							Chapter_len = data.chapters.length;
+							callback && callback(data);
+						},'json');
+					}
+					/*Promise实现异步*/
+					var getCurChapterContentPromise = function(){
+						return new Promise(function(resolve,reject){
+							$.get('./data/data'+ parseInt(Chapter_id) + '.json',function(data){
+								//todo 获取章节详细内容的回调
+								if(data.result === 0) {
+									var url = data.jsonp;
+									Util.getBSJSONP(url , function(data){
+	//									callback && callback(data);
+										resolve(data);
+									})
+								} else {
+									reject({msg:'fail'});
+								}
+							},'json')
+						});
+					} 
+					/*回调实现异步*/
+					var getCurChapterContent = function(chapter_id, callback) {
+						$.get('./data/data'+ parseInt(chapter_id) + '.json',function(data){
+							//todo 获取章节详细内容的回调
+							if(data.result === 0) {
+								var url = data.jsonp;
+								Util.getBSJSONP(url , function(data){
+									console.log(JSON.parse(data));
+									callback && callback(data);
+								})
+							}
+						},'json')
+					}
+					var prevChapter = function(UIcallback){
+						Chapter_id = parseInt(Chapter_id,10);
+						if(Chapter_id == 0){
+							return
+						}
+						Chapter_id -= 1;
+						getCurChapterContent(Chapter_id,UIcallback);
+//						$("body").scrollTo({toT: 0});
+						Util.StorageSetter('last_chapter_id',Chapter_id);
+					}
+					var nextChapter = function(UIcallback){
+						Chapter_id = parseInt(Chapter_id,10);
+						if(Chapter_id == Chapter_len){
+							return
+						}
+						Chapter_id += 1;
+						getCurChapterContent(Chapter_id,UIcallback);
+						Util.StorageSetter('last_chapter_id',Chapter_id);
+					}
+					return {
+						init:init,
+						prevChapter:prevChapter,
+						nextChapter:nextChapter
+					}
+				}
+				function ReaderBaseFrame(container){
+					//todo 渲染基本的UI结构
+					function parseChapterData(jsonData){
+						var jsonObj = JSON.parse(jsonData);
+						var html = '<h4>' +jsonObj.t +'</h4>';
+						for(var i=0;i<jsonObj.p.length;i++){
+							html += '<p>' + jsonObj.p[i] + '<p>';
+						}
+						return html;
+					}
+					return function(data){
+						container.html(parseChapterData(data));
+					};
+				}
+				function EventHanlder(){
+					//todo 交互的事件绑定
+					//touch
+					//zeqto tap只能用在移动端，PC端就不能使用
+					//4.0以前 click 300ms延迟
+					$('#action_mid').click(function() {
+						if(Dom.top_nav.css('display')=='none'){
+							Dom.top_nav.show();
+							Dom.footer_nav.show();
+						} else {
+							Dom.top_nav.hide();
+							Dom.footer_nav.hide();
+							Dom.font_container.hide();
+							Dom.font_button.addClass('icon-typeface').removeClass('icon-typeface-hover');
+						}
+					});
+					$('#typeface').click(function() {
+						if(Dom.font_container.css('display')=='none') {
+							Dom.font_container.show();
+							Dom.font_button.addClass('icon-typeface-hover').removeClass('icon-typeface');
+						}else {
+							Dom.font_container.hide();
+							Dom.font_button.addClass('icon-typeface').removeClass('icon-typeface-hover');
+						}
+					})
+					Dom.night_day_switch_button.click(function(){
+						//触发背景切换的事件
+					});
+					$('.bk_container').click(function(){
+						var _this = $(this);
+						console.log(_this);
+						initBackground = _this.css('background');
+						RootContainer.css('background',initBackground);
+						Util.StorageSetter('background',initBackground);
+					})
+					$('#large-font').click(function(){
+						if(initFontSize > 20) {
+							return;
+						}
+						initFontSize += 1;
+						RootContainer.css('font-size',initFontSize);
+						Util.StorageSetter('font-size',initFontSize);
+					})
+					$('#small-font').click(function(){
+						if(initFontSize < 12) {
+							return;
+						}
+						initFontSize -= 1;
+						RootContainer.css('font-size',initFontSize);
+						Util.StorageSetter('font-size',initFontSize);
+					})
+					Win.scroll(function(){
+						Dom.top_nav.hide();
+						Dom.footer_nav.hide();
+						Dom.font_container.hide();
+						$('#icon-typeface').addClass('icon-typeface').removeClass('icon-typeface-hover');
+					});
+					$("#prev_button").click(function(){
+						//todo获取章节翻页数据渲染
+						readerModel.prevChapter(function(data){
+							readerUI(data);
+							$("body").scrollTop(0);
+						});
+					});
+					$('#next_button').click(function(){
+						//todo获取章节翻页数据渲染
+						readerModel.nextChapter(function(data){
+							readerUI(data);
+							$("body").scrollTop(0);
+						});
+					});
+				}
+				main();
+			})();
 		</script>
 	</body>
 </html>
